@@ -12,7 +12,7 @@
 
     <!-- 底部栏 -->
     <mt-tabbar v-model="selected">
-      <mt-tab-item id="index">
+      <mt-tab-item id="home">
         <img slot="icon" src="./assets/images/sy.png">
         首页
       </mt-tab-item>
@@ -40,6 +40,17 @@ export default {
       selected:''
     }
   },
+  watch: {
+    selected (newV, oleV) {
+      console.log(newV);
+      console.log(this.selected);
+      console.log(oleV);
+      this.$router.push({
+        name: this.selected
+      });
+    }
+
+  }
 }
 </script>
 

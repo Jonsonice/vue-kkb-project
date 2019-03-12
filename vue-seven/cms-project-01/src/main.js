@@ -4,12 +4,19 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+
 Vue.config.productionTip = false
 
 //使用mint-ui引入全部的组件
 import Mint from 'mint-ui';
 Vue.use(Mint);
 import 'mint-ui/lib/style.css'
+
+//配置axios
+import Axios from 'axios'
+Vue.prototype.$axios = Axios
+//配置公共url
+Axios.defaults.baseURL='http://localhost:3000/'
 
 /* eslint-disable no-new */
 new Vue({

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <dom-a></dom-a>
+    <dom-b></dom-b>
+    <dom-c></dom-c>
+  </div>
+  <script type="text/javascript" src="vue.js"></script>
+  <script src="https://cdn.bootcss.com/vue-router/3.0.2/vue-router.js"></script>
+  <script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
+  <script type="text/javascript">
+  
+  var Index = {
+    template:`
+      <div>我是首页</div>
+    `
+  };
+
+  var Post = {
+    data () {
+      return {
+        loading:false,
+        error:null,
+        post:null,
+      }
+    },
+    template:`
+      <div>
+        <div class="loading" v-if="loading">loading</div>
+        <div class="error" v-if="error">{{error}}</div>
+        <div class="content" v-if="post">
+          <h2>{{post.title}}</h2>
+          <p>{{post.body}}</p>
+        </div>
+      </div>
+    `,
+    created () {
+      this.fetchData();
+    },
+    watch: {
+      '$route':'fetchData'
+    },
+    methods: {
+      fetchData(){
+        this.error = null;
+        this.post = null;
+        this.loading = true;
+        this.$axios.get('https://jsonplaceholder.typicode.com/posts/1').then(res=>{
+          this.loading = false;
+          console.log(res.data);
+          this.post = res.data;
+        })
+        .catch(err=>{
+          this.err = err.toString();
+        })
+      }
+    }
+  };
+
+
+  var router = new VueRouter({
+    routes:[
+      {
+        path:'/index',
+        name:'index',
+        component:Index
+      },
+      {
+        path:'/post',
+        name:'post',
+        component:Post
+      }
+    ]
+  });
+
+  var App = {
+    template:`
+      <div>
+        <router-link :to = "{name:'index'}">首页</router-link>
+        <router-link :to = "{name:'post'}">我的博客</router-link>
+        <router-view></router-view>
+      </div>
+    `
+  };
+
+  Vue.prototype.$axios = axios;
+
+  new Vue({
+    el:"#app",
+    data:{
+
+    },
+    components: {
+      App
+    },
+    template:`<App/>`,
+    router
+  });
+
+  </script>
+</body>
+</html>

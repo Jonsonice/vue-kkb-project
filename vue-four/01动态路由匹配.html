@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app"></div>
+  <script type="text/javascript" src="vue.js"></script>
+  <script type="text/javascript" src="./node_modules/vue-router/dist/vue-router.js"></script>
+  <script type="text/javascript">
+
+    var Timeline={
+      template:`
+        <div id='timeline'>
+          <router-link :to="{name:'comDesc',params:{id:'frontend'}}">前端</router-link>
+          <router-link :to="{name:'comDesc',params:{id:'backend'}}">后端</router-link>
+          <router-view></router-view>
+        </div>
+      `
+    };
+    var Pins={
+      template:`
+        <div>我是沸点</div>
+      `
+    };
+
+    var ComDesc={
+      template:`
+        <div>
+          我是前端
+        </div>
+      `
+    };
+
+
+    var router = new VueRouter({
+      routes:[
+        {
+          path:'/timeline',
+          component:Timeline,
+          children:[
+            {
+              name:'comDesc',
+              path:'/timeline/:id',
+              component:ComDesc
+            }
+          ]
+        },
+        {
+          path:'/pins',
+          component:Pins
+        },
+      ]
+    })
+
+
+    var App = {
+      template:`
+        <div>
+          <router-link to='/timeline'>首页</router-link>
+          <router-link to='/pins'>沸点</router-link>
+          <router-view></router-view>
+        </div>
+      `
+    }
+  
+    new Vue({
+      el:"#app",
+      router,
+      template:`<App/>`,
+      components:{
+        App
+      },
+      data() {
+        return {
+          
+        }
+      },
+    })
+  
+  
+  </script>
+</body>
+</html>

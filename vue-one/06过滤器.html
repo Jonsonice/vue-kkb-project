@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script type="text/javascript" src="./vue.min.js"></script>
+  <script type="text/javascript">
+
+    Vue.filter('myReverse', function (value,arg) {
+      return arg+" "+value.split('').reverse().join('');
+    });
+
+
+    var App = {
+      data () {
+        return {
+          price:0,
+          msg: 'hello filter'
+        }
+      },
+      template: `
+        <div>
+          <input type="number" v-model='price'/>
+          <h3>{{price | myCurrentcy}}</h3>
+          <h4>{{msg | myReverse('哈哈哈')}}</h4>
+        </div>
+      `,
+      filters:{
+        myCurrentcy:function (value) {
+          return "$"+value
+        }
+      }
+    }
+
+    new Vue({
+      el: "#app",
+      components: {
+        App
+      },
+      template: `<App/>`
+    })
+  </script>
+</body>
+
+</html>

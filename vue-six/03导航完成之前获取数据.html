@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <dom-a></dom-a>
+    <dom-b></dom-b>
+    <dom-c></dom-c>
+  </div>
+  <script type="text/javascript" src="vue.js"></script>
+  <script src="https://cdn.bootcss.com/vue-router/3.0.2/vue-router.js"></script>
+  <script src="https://cdn.bootcss.com/axios/0.18.0/axios.js"></script>
+  <script type="text/javascript">
+    Vue.user(VueRouter);
+    
+    var User = {
+      data () {
+        return {
+          user:'',
+          error:null,
+          timer:null,
+          num:0,
+          msg:'',
+          msg1:'',
+          confir:true,
+        }
+      },
+      template:`
+        <div>
+          <div>{{num}}</div>
+          <input type=" v-model="msg> 
+          <p>{{msg1}}</p>
+          <button>保存</button>
+          <div c-if="error" class="error">
+            {{error}}
+          </div>
+          <div class="user" v-if="user">
+            <h2>{{user}}</h2>
+          </div>
+        </div>
+      `,
+      methods: {
+        setDatas(data){
+          this.user = data;
+        },
+        setErroe(err){
+          this.error = err;
+        }
+      },
+      beforeRouteEnter((to, from, next) => {
+        axios.get('https://jsonplaceholder.typicode.com/post/$(to.params.id)')
+        .then( res=> {
+        next(vm=>vm.setDatas(res.data));
+        })
+        .catch(err=>{
+          next(vm=>vm.setError(err))
+        })
+      },
+      beforeRouteUpdate((to, from, next) => {
+        ${
+        
+      })
+    }
+  </script>
+</body>
+</html>

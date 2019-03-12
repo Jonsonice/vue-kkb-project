@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app">
+    <app/>
+  </div>
+
+  <script type="text/javascript" src="./vue.min.js"></script>
+  <script type="text/javascript">
+
+    Vue.component('Test', {
+      data() {
+        return {
+          msg:"hello world"
+        }
+      },
+      template:`
+        <div>
+          <div>{{msg}}</div>
+          <button @click="changerHandler">改变</button>
+        </div>
+      `,
+      methods: {
+        changerHandler(){
+          this.msg=this.msg+'哈哈哈'
+        }
+      },
+      beforeCreate () {
+        console.log(this.msg);
+      },
+      created () {
+        console.log(this.msg);
+        //操作后端数据 数据驱动视图 
+        //应用发起ajax请求
+      },
+      beforeMount () {
+        console.log(document.getElementById('app'));
+      },
+      mounted () {
+        console.log(document.getElementById('app'));
+      },
+      beforeUpdate() {
+        console.log(document.getElementById('app').innerHTML);
+      },
+      updated () {
+        console.log(document.getElementById('app').innerHTML);
+      },
+      beforeDestroy() {
+        console.log('beforeDestroy');
+      },
+      destroyed () {
+        console.log('destroy');
+      },
+      activated() {
+         console.log('组件被激活了');
+      },
+      deactivated() {
+         console.log('组件停用了');
+      },
+    });
+
+    var App ={
+      data() {
+        return {
+          isShow:true,
+        }
+      },
+      //<keep-alive></keep-alive>能在组件的切换过程中将状态保留在内存中，防止重复渲染DOM
+      template:`
+        <div class="app">
+          <keep-alive>
+            <Test v-if="isShow"></Test>
+          </keep-alive>
+          
+          <button @click="isShow=!isShow">销毁</button>
+        </div>
+      `
+    }
+
+    new Vue({
+      el:'#app',
+      data(){
+        return{
+
+        }
+      },
+      components:{
+        App
+      }
+    });
+
+
+
+  </script>
+</body>
+</html>

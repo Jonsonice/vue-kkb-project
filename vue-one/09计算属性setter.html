@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    ul li.active{
+      background: #666fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <audio autoplay controls :src="getCurrentSongSrc"></audio>
+    <ul>
+      <li 
+      v-for="(item,index) in musicData"
+      @click="clickHandler(index)"
+      :class="{active:currentIndex === index}">
+        <h2>{{item.id}}-歌名:{{item.name}}</h2>
+        <p>{{item.songSrc}}</p>
+      </li>
+    </ul>
+  </div>
+  <script type="text/javascript" src="./vue.min.js"></script>
+  <script type="text/javascript">
+
+    var musicData=[
+      {id:0,name:'命硬',author:'侧田',songSrc:'./static/侧田-命硬.flac'},
+      {id:1,name:'好人',author:'侧田',songSrc:'./static/侧田-好人.flac'},
+      {id:2,name:'情歌',author:'侧田',songSrc:'./static/侧田-情歌.flac'},
+      {id:3,name:'男人KTV',author:'侧田',songSrc:'./static/侧田-男人KTV.flac'}
+    ];
+
+    new Vue({
+      el:'#app',
+      data(){
+        return{
+          musicData:musicData,
+          currentIndex: 0
+        }
+      },
+      computed: {
+        // getCurrentSongSrc:function () {
+        //   return this.musicData[this.currentIndex].songSrc
+        // }
+        getCurrentSongSrc:{
+          set:function(newV){
+            console.log(newV);
+            this.currentIndex = newV
+          },
+          get:function(){
+            return this.musicData[this.currentIndex].songSrc
+          }
+        }
+      },
+      methods: {
+        clickHandler(index){
+          // this.currentIndex = index;
+          console.log(this.getCurrentSongSrc);
+          this.getCurrentSongSrc = index;
+        }
+      },
+
+    });
+
+
+  </script>
+</body>
+</html>

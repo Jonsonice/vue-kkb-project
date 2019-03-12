@@ -70,6 +70,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-left: 10px;
 }
 .newList ul li a img{
   width: 150px;

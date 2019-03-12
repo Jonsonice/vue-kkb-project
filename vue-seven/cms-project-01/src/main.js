@@ -18,6 +18,9 @@ Vue.prototype.$axios = Axios
 //配置公共url
 Axios.defaults.baseURL='http://localhost:3000/'
 
+//引入全局css
+import '../src/assets/css/global.css'
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

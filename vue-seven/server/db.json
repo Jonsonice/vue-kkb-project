@@ -8,5 +8,167 @@
       "url":"",
       "img":"http://a0.ifengimg.com/autoimg/38/18/2591838_8.jpg"
     }
+  ],
+  "newslist":[
+    {
+      "id":1,
+      "title":"加长才是王道 新一代奔驰S级将不推出标轴",
+      "add_time":"2019-01-08 12:06:11",
+      "zhaiyao":"这意味着我们熟悉的“W223”代号将不会出现在未来的S级上，而是直接使用V223的代号",
+      "click":1,
+      "img_url":"http://cms-bucket.nosdn.127.net/2019/01/08/1968a9359b41419e9c45e36b7c1e5edb.jpeg?imageView&thumbnail=550x0"
+    },
+    {
+      "id":2,
+      "title":"旅行/轿跑/敞篷? 我保证这些猪鼻7系你都没见过",
+      "add_time":"2019-02-03 10:42:29",
+      "zhaiyao":"日前，有外媒曝光了几张中期改款7系旅行车、轿跑车、敞篷车的效果图",
+      "click":2,
+      "img_url":"http://cms-bucket.ws.126.net/2019/02/03/6041e8d493f143698d6faa058fb8b58d.jpeg?imageView&thumbnail=550x0"
+    },
+    {
+      "id":3,
+      "title":"214万起步 新款梅赛德斯-迈巴赫S级上市",
+      "add_time":"2018-09-30 00:02:31",
+      "zhaiyao":"S 680和S 560 4MATIC将分别搭载6.0L双涡轮增压V12发动机和4.0L双涡轮增压V8发动机。",
+      "click":3,
+      "img_url":"http://cms-bucket.nosdn.127.net/2018/09/29/3c5a539151cb49d1bc7de72dde9dd9ec.jpeg?imageView&thumbnail=550x0"
+    },
+    {
+      "id":4,
+      "title":"预售184.8万元起 全新Panamera GTS亮相",
+      "add_time":"2018-11-29 02:28:55",
+      "zhaiyao":"新车搭载有4.0T双涡轮增压V8发动机，最大输出功率460马力，峰值扭矩620牛·米，匹配8速PDK双离合变速箱",
+      "click":4,
+      "img_url":"http://cms-bucket.nosdn.127.net/2018/11/29/7b478a67947844a9b6d4d2b8c208ec3f.jpeg?imageView&thumbnail=550x0"
+    },
+    {
+      "id":5,
+      "title":"限量100台 宾利慕尚创始人典藏版8月首发",
+      "add_time":"2018-07-13 05:02:30",
+      "zhaiyao":"宾利汽车将于2019年迎来品牌成立100周年，为庆祝这一即将来临的非凡时刻，Mulliner设计师以全新宾利慕尚创始人典藏版，演绎品牌所蕴藏的辉煌荣耀，彰显英伦奢华气韵",
+      "click":1,
+      "img_url":"http://cms-bucket.nosdn.127.net/2018/07/12/080b91ece3a0414dac6492ada5e5cd8e.jpeg?imageView&thumbnail=550x0"
+    },
+    {
+      "id":6,
+      "title":"宇宙第二好汽车来了 全新幻影展前曝光",
+      "add_time":"2017-11-15 16:40:15",
+      "zhaiyao":"奢华架构、“艺境藏珍”画廊、“奢华殿堂”、移动的艺术品、至臻完美的材质、无与伦比的设计与工程，全新劳斯莱斯幻影再一次诠释了“世界上最好的汽车”，同时也为世界顶级奢品重新树立了标杆。",
+      "click":2,
+      "img_url":"http://cms-bucket.nosdn.127.net/0491d8a7bc564dcb84c3f64ed45607a820171115163801.jpeg?imageView&thumbnail=550x0"
+    },
+    {
+      "id":7,
+      "title":"特殊车漆/新款轮圈 玛莎拉蒂推出150台特别车型",
+      "add_time":"2018-12-06 14:22:41",
+      "zhaiyao":"玛莎拉蒂公布了旗下Edizione Nobile特别版车型官图，特别版包含有玛莎拉蒂Levante、Ghibli及总裁这三款车型，每款车型只推出50辆，共计150辆.",
+      "click":3,
+      "img_url":"http://cms-bucket.nosdn.127.net/2018/12/06/b407e31c9a5f45c9805305aa6839b414.jpeg?imageView&thumbnail=550x0"
+    },
+    {
+      "id":8,
+      "title":"新款梅赛德斯-AMG S63轿跑版6月首发",
+      "add_time":"2018-05-29 09:10:35",
+      "zhaiyao":"前格栅更换为垂瀑式设计，尾灯组融入OLED光源，内饰换装了全新三辐式多功能方向盘，搭载一台全新的4.0升V8双涡轮增压发动机。",
+      "click":4,
+      "img_url":"http://cms-bucket.nosdn.127.net/2018/05/29/153541647b0e4ec789c9a3a3967a76a2.jpeg?imageView&thumbnail=550x0"
+    },
+    {
+      "id":9,
+      "title":"127.6991万 新Panamera 4 E-Hybrid上市",
+      "add_time":"2018-05-08 02:02:30",
+      "zhaiyao":"保时捷全新Panamera提供长短轴距版、传统汽油动力版、插电混合动力版、还有创新的休旅式车身版，每一款细分车型都能满足挑剔消费者们独特的需求。",
+      "click":1,
+      "img_url":"http://img3.cache.netease.com/photo/0008/2016-09-29/C25K8S8I711P0008.jpg"
+    },
+    {
+      "id":10,
+      "title":"捷豹XJ降价促销优惠29.3万 现车充足",
+      "add_time":"2019-03-11 15:46:53",
+      "zhaiyao":"近日，捷豹XJ系车型给出了最高29.3万元的现金优惠，库存方面，店内现车充足，",
+      "click":2,
+      "img_url":"http://cms-bucket.nosdn.127.net/8b6a934fe808460bbbd10c645d15bf3f20170703172903.jpeg?imageView&thumbnail=550x0"
+    },
+    {
+      "id":11,
+      "title":"加长才是王道 新一代奔驰S级将不推出标轴",
+      "add_time":"2019-01-08 12:06:11",
+      "zhaiyao":"这意味着我们熟悉的“W223”代号将不会出现在未来的S级上，而是直接使用V223的代号",
+      "click":3,
+      "img_url":"http://cms-bucket.nosdn.127.net/2019/01/08/1968a9359b41419e9c45e36b7c1e5edb.jpeg?imageView&thumbnail=550x0"
+    },
+    {
+      "id":12,
+      "title":"旅行/轿跑/敞篷? 我保证这些猪鼻7系你都没见过",
+      "add_time":"2019-02-03 10:42:29",
+      "zhaiyao":"日前，有外媒曝光了几张中期改款7系旅行车、轿跑车、敞篷车的效果图",
+      "click":4,
+      "img_url":"http://cms-bucket.ws.126.net/2019/02/03/6041e8d493f143698d6faa058fb8b58d.jpeg?imageView&thumbnail=550x0"
+    },
+    {
+      "id":13,
+      "title":"214万起步 新款梅赛德斯-迈巴赫S级上市",
+      "add_time":"2018-09-30 00:02:31",
+      "zhaiyao":"S 680和S 560 4MATIC将分别搭载6.0L双涡轮增压V12发动机和4.0L双涡轮增压V8发动机。",
+      "click":1,
+      "img_url":"http://cms-bucket.nosdn.127.net/2018/09/29/3c5a539151cb49d1bc7de72dde9dd9ec.jpeg?imageView&thumbnail=550x0"
+    },
+    {
+      "id":14,
+      "title":"预售184.8万元起 全新Panamera GTS亮相",
+      "add_time":"2018-11-29 02:28:55",
+      "zhaiyao":"新车搭载有4.0T双涡轮增压V8发动机，最大输出功率460马力，峰值扭矩620牛·米，匹配8速PDK双离合变速箱",
+      "click":2,
+      "img_url":"http://cms-bucket.nosdn.127.net/2018/11/29/7b478a67947844a9b6d4d2b8c208ec3f.jpeg?imageView&thumbnail=550x0"
+    },
+    {
+      "id":15,
+      "title":"限量100台 宾利慕尚创始人典藏版8月首发",
+      "add_time":"2018-07-13 05:02:30",
+      "zhaiyao":"宾利汽车将于2019年迎来品牌成立100周年，为庆祝这一即将来临的非凡时刻，Mulliner设计师以全新宾利慕尚创始人典藏版，演绎品牌所蕴藏的辉煌荣耀，彰显英伦奢华气韵",
+      "click":3,
+      "img_url":"http://cms-bucket.nosdn.127.net/2018/07/12/080b91ece3a0414dac6492ada5e5cd8e.jpeg?imageView&thumbnail=550x0"
+    },
+    {
+      "id":16,
+      "title":"宇宙第二好汽车来了 全新幻影展前曝光",
+      "add_time":"2017-11-15 16:40:15",
+      "zhaiyao":"奢华架构、“艺境藏珍”画廊、“奢华殿堂”、移动的艺术品、至臻完美的材质、无与伦比的设计与工程，全新劳斯莱斯幻影再一次诠释了“世界上最好的汽车”，同时也为世界顶级奢品重新树立了标杆。",
+      "click":4,
+      "img_url":"http://cms-bucket.nosdn.127.net/0491d8a7bc564dcb84c3f64ed45607a820171115163801.jpeg?imageView&thumbnail=550x0"
+    },
+    {
+      "id":17,
+      "title":"特殊车漆/新款轮圈 玛莎拉蒂推出150台特别车型",
+      "add_time":"2018-12-06 14:22:41",
+      "zhaiyao":"玛莎拉蒂公布了旗下Edizione Nobile特别版车型官图，特别版包含有玛莎拉蒂Levante、Ghibli及总裁这三款车型，每款车型只推出50辆，共计150辆.",
+      "click":1,
+      "img_url":"http://cms-bucket.nosdn.127.net/2018/12/06/b407e31c9a5f45c9805305aa6839b414.jpeg?imageView&thumbnail=550x0"
+    },
+    {
+      "id":18,
+      "title":"新款梅赛德斯-AMG S63轿跑版6月首发",
+      "add_time":"2018-05-29 09:10:35",
+      "zhaiyao":"前格栅更换为垂瀑式设计，尾灯组融入OLED光源，内饰换装了全新三辐式多功能方向盘，搭载一台全新的4.0升V8双涡轮增压发动机。",
+      "click":2,
+      "img_url":"http://cms-bucket.nosdn.127.net/2018/05/29/153541647b0e4ec789c9a3a3967a76a2.jpeg?imageView&thumbnail=550x0"
+    },
+    {
+      "id":19,
+      "title":"127.6991万 新Panamera 4 E-Hybrid上市",
+      "add_time":"2018-05-08 02:02:30",
+      "zhaiyao":"保时捷全新Panamera提供长短轴距版、传统汽油动力版、插电混合动力版、还有创新的休旅式车身版，每一款细分车型都能满足挑剔消费者们独特的需求。",
+      "click":3,
+      "img_url":"http://img3.cache.netease.com/photo/0008/2016-09-29/C25K8S8I711P0008.jpg"
+    },
+    {
+      "id":20,
+      "title":"捷豹XJ降价促销优惠29.3万 现车充足",
+      "add_time":"2019-03-11 15:46:53",
+      "zhaiyao":"近日，捷豹XJ系车型给出了最高29.3万元的现金优惠，库存方面，店内现车充足，",
+      "click":4,
+      "img_url":"http://cms-bucket.nosdn.127.net/8b6a934fe808460bbbd10c645d15bf3f20170703172903.jpeg?imageView&thumbnail=550x0"
+    }
   ]
 }

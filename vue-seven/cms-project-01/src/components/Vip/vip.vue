@@ -1,17 +1,17 @@
 <template>
-  <div class="hello">
+  <div class="vip">
 
-
+    我是会员
 
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'vip',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+
     }
   }
 }

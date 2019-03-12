@@ -10,9 +10,9 @@
     <div class="list">
       <ul>
         <li v-for="(grid,index) in grids" :key="grid.id">
-          <a href="javascript:void(0);">
+          <router-link :to="grid.router">
             <img :src="grid.src" alt="">
-          </a>
+          </router-link>
           <p>{{grid.title}}</p>
         </li>
       </ul>
@@ -29,14 +29,13 @@ import src5 from '../../assets/images/home/ly.png'
 import src6 from '../../assets/images/home/ss.png'
 
 var grids = [
-  {id:1,src:src1,title:'新闻资讯'},
-  {id:2,src:src2,title:'图文分享'},
-  {id:3,src:src3,title:'商品展示'},
-  {id:4,src:src4,title:'资讯'},
-  {id:5,src:src5,title:'留言反馈'},
-  {id:6,src:src6,title:'联系我们'},
-
-]
+  {id:1,src:src1,title:'新闻资讯',router:{name:'news.list'}},
+  {id:2,src:src2,title:'图文分享',router:{name:'news.list'}},
+  {id:3,src:src3,title:'商品展示',router:{name:'news.list'}},
+  {id:4,src:src4,title:'资讯',router:{name:'news.list'}},
+  {id:5,src:src5,title:'留言反馈',router:{name:'news.list'}},
+  {id:6,src:src6,title:'联系我们',router:{name:'news.list'}},
+];
 
 
 export default {

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <!-- 顶部栏区域 -->
-    <mt-header title="信息管理">
+    <mt-header fixed title="信息管理">
       <router-link to="/" slot="left">
         <mt-button icon="back">返回</mt-button>
       </router-link>
@@ -11,7 +11,7 @@
     <router-view/>
 
     <!-- 底部栏 -->
-    <mt-tabbar v-model="selected">
+    <mt-tabbar fixed v-model="selected">
       <mt-tab-item id="home">
         <img slot="icon" src="./assets/images/sy.png">
         首页
@@ -20,7 +20,7 @@
         <img slot="icon" src="./assets/images/hy.png">
         会员
       </mt-tab-item>
-      <mt-tab-item id="shopcat">
+      <mt-tab-item id="cart">
         <img slot="icon" src="./assets/images/gwc.png">
         购物车
       </mt-tab-item>

@@ -1,17 +1,17 @@
 <template>
-  <div class="hello">
+  <div class="cart">
 
-
+    我是购物车
 
   </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'cart',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+
     }
   }
 }

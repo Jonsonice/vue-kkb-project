@@ -4,6 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+//导入时间moment.js
+import Moment from 'moment'
+//定义moment全局过滤器
+Vue.filter('converTime' , function (data,formatStr) {
+  return Moment(data).format(formatStr);
+})
 
 Vue.config.productionTip = false
 

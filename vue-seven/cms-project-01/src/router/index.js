@@ -5,6 +5,7 @@ import Vip from '@/components/Vip/vip'
 import Search from '@/components/Search/search'
 import Cart from '@/components/Cart/cart'
 import NewsList from '@/components/News/NewsList'
+import NewsDetail from '@/components/News/NewsDetail'
 
 Vue.use(Router)
 
@@ -36,10 +37,16 @@ export default new Router({
       name: 'cart',
       component: Cart
     },
+    //新闻列表
     {
       path: '/news/list',
       name: 'news.list',
       component:NewsList
     },
+    {
+      path: '/news/detail',
+      name: 'detail',
+      component:NewsDetail
+    }
   ]
 })

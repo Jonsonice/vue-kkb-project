@@ -4,7 +4,7 @@
     <div class="newList">
 			<ul>
         <li v-for="(news,index) in newsList" :key="news.id">
-          <a href="#">
+          <router-link :to="{name:'detail',query:{id:news.id}}">
             <div class="new_img">
               <img :src="news.img_url"/>
             </div>
@@ -14,11 +14,11 @@
                 <p class="summary">{{news.zhaiyao}}</p>
                 <p>
                   <span class="praise">点赞数：{{news.click}}</span>
-                  <span class="time">发表时间：{{news.add_time}}</span>
+                  <span class="time">发表时间：{{news.add_time | converTime( 'YYYY-MM-DD' )}}</span>
                 </p>
               </div>
             </div>
-          </a>
+          </router-link>
           <span class="line"></span>
         </li>
       </ul>
@@ -40,13 +40,16 @@
         this.newsList = res.data;
         // console.log(this.newsList);
       })
-      .catch(err=> console.log('新闻列表异常',err));
+      .catch(err=> {
+        console.log('新闻列表异常',err)
+      });
     }
   }
 </script>
 <style scoped>
 .news{
   padding-bottom: 100px;
+  margin-top: 8px;
 }
 .newList{
   width: 100%;
@@ -95,6 +98,7 @@
 }
 .content .praise{
   color:darkgrey;
+  margin-right: 5px;
 }
 .content .time{
   color:darkgrey;

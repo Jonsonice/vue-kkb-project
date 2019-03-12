@@ -49,7 +49,7 @@ export default {
   created() {
     this.$axios.get('message')
     .then(res=>{
-      console.log(res.data)
+      // console.log(res.data)
       this.imgs=res.data
     })
     .catch(err=>{

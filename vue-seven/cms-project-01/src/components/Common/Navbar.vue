@@ -26,6 +26,7 @@
   height: 40px;
   line-height: 40px;
   position: relative;
+  border-bottom: 1px solid #c8c7cc;
 }
 h5{
   float: left;

@@ -1,6 +1,6 @@
 <template>
   <div class="news">
-    <!-- {{newsList}} -->
+    <Navbar title="新闻列表"/>
     <div class="newList">
 			<ul>
         <li v-for="(news,index) in newsList" :key="news.id">

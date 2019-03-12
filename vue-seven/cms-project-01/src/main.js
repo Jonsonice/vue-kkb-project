@@ -21,6 +21,11 @@ Axios.defaults.baseURL='http://localhost:3000/'
 //引入全局css
 import '../src/assets/css/global.css'
 
+
+//注册全局导航栏
+import Navbar from '@/components/Common/Navbar'
+Vue.component(Navbar.name,Navbar)
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

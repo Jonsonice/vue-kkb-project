@@ -13,7 +13,9 @@
     <div class="tabBar">
       <ul>
         <li v-for="(tab,index) in tabs" :key="tab.id">
-          <router-link :to="tab.routerName">
+          <router-link :to="tab.routerName"
+                        exact @click.native="changeHash(index)"
+                        :class="{'link-active':index == currentIndex}">
             <img :src="tab.imgSrc" alt="">
             <p>{{tab.title}}</p>
           </router-link>
@@ -62,19 +64,24 @@ export default {
     return {
       selected:'',
       tabs:tabs,
+      currentIndex:0
     }
   },
-  watch: {
-    selected (newV, oleV) {
-      console.log(newV);
-      console.log(this.selected);
-      console.log(oleV);
-      this.$router.push({
-        name: this.selected
-      });
+  methods: {
+    changeHash(index){
+      this.currentIndex = index;
     }
-
-  }
+  },
+  // watch: {
+  //   selected (newV, oleV) {
+  //     console.log(newV);
+  //     console.log(this.selected);
+  //     console.log(oleV);
+  //     this.$router.push({
+  //       name: this.selected
+  //     });
+  //   }
+  // }
 }
 </script>
 

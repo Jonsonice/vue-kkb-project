@@ -5,7 +5,7 @@
 			<p>{{detail.title}}</p>
 			<div class="others">
 				<span>{{detail.click}}次点击</span>
-				<span>分类:民生经济</span>
+				<span>分类:汽车新闻</span>
 				<span>添加时间：{{detail.add_time | converTime( 'YYYY-MM-DD' )}}</span>
 			</div>
 		</div>
@@ -27,7 +27,7 @@
       this.$axios.get('detail/' + id)
       .then( res=>{
         this.detail = res.data;
-        console.log(this.detail);
+        // console.log(this.detail);
       })
       .catch(err=> {
         console.log('新闻详情异常',err);

@@ -6,6 +6,7 @@ import Search from '@/components/Search/search'
 import Cart from '@/components/Cart/cart'
 import NewsList from '@/components/News/NewsList'
 import NewsDetail from '@/components/News/NewsDetail'
+import PhotoList from '@/components/Photo/PhotoList'
 
 Vue.use(Router)
 
@@ -47,6 +48,12 @@ export default new Router({
       path: '/news/detail',
       name: 'detail',
       component:NewsDetail
+    },
+    //图文分享
+    {
+      path: '/photo/list/:categoryId',
+      name: 'photo.list',
+      component:PhotoList
     }
   ]
 })

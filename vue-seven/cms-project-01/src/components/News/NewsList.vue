@@ -49,7 +49,6 @@
 <style scoped>
 .news{
   padding-bottom: 100px;
-  margin-top: 8px;
 }
 .newList{
   width: 100%;

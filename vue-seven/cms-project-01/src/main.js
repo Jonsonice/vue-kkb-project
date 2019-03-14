@@ -24,6 +24,10 @@ Vue.prototype.$axios = Axios
 //配置公共url
 Axios.defaults.baseURL='http://localhost:3000/'
 
+//图片查看器
+import VuePreview from 'vue-preview'
+Vue.use(VuePreview)//内部会原型Vue.component('vue-preview',{})
+
 //引入全局css
 import '../src/assets/css/global.css'
 

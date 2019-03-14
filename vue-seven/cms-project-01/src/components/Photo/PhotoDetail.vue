@@ -8,13 +8,15 @@
       <span>分类：汽车新闻</span>
 
       <!-- 缩略图 -->
-      <ul>
+      <!-- <ul>
         <li v-for="(thumImg,index) in thumImgs" :key="index">
           <a href="javascript:void(0)">
             <img :src="thumImg.src" alt="">
           </a>
         </li>
-      </ul>
+      </ul> -->
+
+      <vue-preview :slides="thumImgs"></vue-preview>
 
       <!-- 详细内容 -->
       <div class="photo-desc">
@@ -33,6 +35,7 @@ export default{
       thumImgs:[]
     }
   },
+
   created() {
     let id = this.$route.query.id;
     var getPhotoDetail=()=> {
@@ -49,6 +52,11 @@ export default{
         // console.log(perms);
         this.imgInfo = acct.data;
         this.thumImgs = perms.data.srcArr;
+        this.thumImgs.forEach((item,index)=>{
+          item.msrc = item .src;
+          item.w = 600;
+          item.h = 400;
+        })
     }))
   },
 }
@@ -67,4 +75,5 @@ export default{
   font-size: 18px;
   color: #333;
 }
+
 </style>

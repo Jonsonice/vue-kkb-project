@@ -19,3 +19,14 @@ html{
   height: 100%;
   overflow: hidden;
 }
+figure{
+  width: 30%;
+  display: inline-block;
+  margin-left: 10px;
+}
+figure a{
+  display: inline-block;
+}
+figure img{
+  width: 100%;
+}

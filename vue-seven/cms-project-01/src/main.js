@@ -36,6 +36,9 @@ import '../src/assets/css/global.css'
 import Navbar from '@/components/Common/Navbar'
 Vue.component(Navbar.name,Navbar)
 
+//注册全局评论组件
+import Comment from '@/components/Common/Comment'
+Vue.component(Comment.name,Comment)
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

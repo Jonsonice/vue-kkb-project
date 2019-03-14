@@ -25,6 +25,9 @@
       <div class="photo-desc">
         <p>{{imgInfo.content}}</p>
       </div>
+
+      <!-- 评论组件 -->
+      <Comment></Comment>
     </p>
     </div>
   </div>

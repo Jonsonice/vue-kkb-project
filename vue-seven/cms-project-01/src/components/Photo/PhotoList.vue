@@ -1,9 +1,10 @@
 <template>
   <div class="photolist">
+    <Navbar title="图文列表"/>
     <div class="category-list">
       <ul>
-        <li v-for="(category,index) in photoclass" :key="category.id">
-          <a href="#">{{category.title}}</a>
+        <li v-for="(category,index) in photoclass" :key="category.id" @click="categoryHandler(category.id,index)">
+          <a href="javascript:void(0);" :class="{active:index == currentIndex}">{{category.title}}</a>
         </li>
       </ul>
     </div>
@@ -32,10 +33,16 @@ export default {
   data () {
     return {
       photolist:[],
-      photoclass:[]
+      photoclass:[],
+      currentIndex:0
     }
   },
   methods: {
+    categoryHandler(id,index){
+      //动态路由跳转
+      this.$router.push({name:"photo.list",params:{categoryId:id}})
+      this.currentIndex = index;
+    },
     loadImgByCategoryId(id){
       this.$axios.get('photolist')
       .then(res=>{
@@ -46,12 +53,24 @@ export default {
       });
     }
   },
+  beforeRouteUpdate (to, from, next) {
+    // 在当前路由改变，但是该组件被复用时调用
+    // 举例来说，对于一个带有动态参数的路径 /foo/:id，在 /foo/1 和 /foo/2 之间跳转的时候，
+    // 由于会渲染同样的 Foo 组件，因此组件实例会被复用。而这个钩子就会在这个情况下被调用。
+    // 可以访问组件实例 `this`
+    // console.log(to);
+    // console.log(from);
+    this.loadImgByCategoryId(to.params.categoryId);
+    next();
+},
   created () {
     this.loadImgByCategoryId(1);
 
     this.$axios.get('photoclass')
     .then(res=>{
       this.photoclass = res.data;
+      //添加数据全部
+      this.photoclass.unshift({"id":0,"title":"全部"});
     })
     .catch(err=>{
       console.log('图片标题异常',err)
@@ -79,7 +98,6 @@ export default {
   }
   .category-list ul{
     width: 100%;
-    height: 50px;
     overflow-y: hidden;
     overflow-x: scroll;
     white-space: nowrap;
@@ -93,7 +111,16 @@ export default {
     text-align: center;
   }
   .category-list ul li a{
+    text-decoration: none;
+    font-size: 16px;
+    color: black;
+  }
+  .category-list ul li a.active{
     color: #26a2ff;
+  }
+  .photo-list ul li{
+    width: 100%;
+    position: relative;
   }
   .photo-list ul li a{
     text-decoration: none;

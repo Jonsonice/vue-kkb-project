@@ -3,9 +3,12 @@
 		<Navbar title="图文详情"/>
 		<div class="photo-title">
       <p>{{imgInfo.title}}</p>
-      <span>发起日期：{{imgInfo.add_time | converTime( 'YYYY-MM-DD' )}}</span>
-      <span>{{imgInfo.click}}次浏览</span>
-      <span>分类：汽车新闻</span>
+      <div class="others">
+        <span>发起日期：{{imgInfo.add_time | converTime( 'YYYY-MM-DD' )}}</span>
+        <span>{{imgInfo.click}}次浏览</span>
+        <span>分类：汽车新闻</span>
+      </div>
+
 
       <!-- 缩略图 -->
       <!-- <ul>
@@ -63,17 +66,25 @@ export default{
 </script>
 <style scoped>
 .photo-title p {
-  font-size: 20px;
+  font-size: 18px;
+  text-align: center;
   font-weight: 600;
   color: #0f80ff;
   margin: 15px 0 ;
+  padding: 0 50px;
 }
 .photo-title span{
   padding: 10px 5px;
+  font-size: 12px;
 }
 .photo-desc p{
   font-size: 18px;
   color: #333;
+  padding: 0 10px;
+  text-align: left;
 }
-
+.others{
+  margin-bottom: 10px;
+  text-align: center;
+}
 </style>

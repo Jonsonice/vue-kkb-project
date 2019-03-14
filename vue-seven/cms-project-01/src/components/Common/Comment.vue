@@ -22,15 +22,12 @@
         </li>
       </ul>
       <ul class="comment-list">
-        <li>
-          用户1：大家好 2012-2-2
+        <li v-for="(comment,index) in comments">
+          <span class="name">{{comment.user_name}}:</span>
+          <span class="content">{{comment.content}}</span>
+          <span class="time">{{comment.add_time | relativeTime}}</span>
         </li>
-        <li>
-          用户1：大家好 2012-2-2
-        </li>
-        <li>
-          用户1：大家好 2012-2-2
-        </li>
+
       </ul>
       加载更多按钮
     </div>
@@ -39,12 +36,29 @@
 
 <script>
 export default {
+
+  props:['cid'],
   name: 'Comment',
   data () {
     return {
-
+      comments:[]
     }
-  }
+  },
+  created() {
+    // console.log(this.cid);
+    let page = this.$route.query.id || "1";
+    // console.log(this.$route.query.id);
+    // console.log('comments/'+ this.cid + '?pageindex='+page);
+    this.$axios.get('getcomments/'+ this.cid + '?pageindex='+page)
+    .then(res=>{
+      console.log(res.data.commentArr);
+      this.comments = res.data.commentArr;
+      console.log(this.comments);
+    })
+    .catch(err=>{r
+      console.log('评论加载失败');
+    })
+  },
 }
 </script>
 
@@ -75,6 +89,19 @@ export default {
   padding-bottom: 5px;
   margin-bottom: 5px;
   padding-left: 5px;
+}
+.comment-list .name{
+  float: left;
+  margin-right: 10px;
+
+}
+.comment-list .content{
+  font-size: 14px;
+  overflow: hidden;
+}
+.comment-list .time{
+  float: right;
+  font-size: 12px;
 }
 li{
   list-style: none;

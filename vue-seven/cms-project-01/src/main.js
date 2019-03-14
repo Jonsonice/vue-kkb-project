@@ -9,7 +9,10 @@ import Moment from 'moment'
 //定义moment全局过滤器
 Vue.filter('converTime' , function (data,formatStr) {
   return Moment(data).format(formatStr);
-})
+});
+Vue.filter('relativeTime' , function (data) {
+  return Moment(data).fromNow();
+});
 
 Vue.config.productionTip = false
 

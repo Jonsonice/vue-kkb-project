@@ -27,7 +27,7 @@
       </div>
 
       <!-- 评论组件 -->
-      <Comment></Comment>
+      <Comment :cid="$route.query.id"></Comment>
     </p>
     </div>
   </div>
@@ -38,7 +38,7 @@ export default{
   data () {
     return {
       imgInfo:{},
-      thumImgs:[]
+      thumImgs:[].thumImgs
     }
   },
 

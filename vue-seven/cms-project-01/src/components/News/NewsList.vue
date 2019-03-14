@@ -52,7 +52,7 @@
 }
 .newList{
   width: 100%;
-  border-bottom: 1px solid #ccc;
+  /* border-bottom: 1px solid #ccc; */
   font-size: 12px;
 }
 .newList ul li{

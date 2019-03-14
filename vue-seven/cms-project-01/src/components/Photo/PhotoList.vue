@@ -12,10 +12,10 @@
     <div class="photo-list">
       <ul>
         <li v-for="(item,index) in photolist" :key="item.id">
-          <a href="">
+          <router-link :to="{name:'photo.detail',query:{id:item.id}}">
             <!-- <img :src="item.img_url" alt="">-->
             <img v-lazy="item.img_url">
-          </a>
+          </router-link>
           <p>
             <span>{{item.title}}</span>
             <br>
@@ -53,6 +53,14 @@ export default {
       });
     }
   },
+  beforeRouteEnter (to, from, next) {
+    // 在渲染该组件的对应路由被 confirm 前调用
+    // 不！能！获取组件实例 `this`
+    // 因为当守卫执行前，组件实例还没被创建
+    next(vm=>{
+      vm.loadImgByCategoryId(to.params.categoryId)
+    })
+  },
   beforeRouteUpdate (to, from, next) {
     // 在当前路由改变，但是该组件被复用时调用
     // 举例来说，对于一个带有动态参数的路径 /foo/:id，在 /foo/1 和 /foo/2 之间跳转的时候，
@@ -64,7 +72,7 @@ export default {
     next();
 },
   created () {
-    this.loadImgByCategoryId(1);
+    // this.loadImgByCategoryId(0);
 
     this.$axios.get('photoclass')
     .then(res=>{
@@ -117,6 +125,9 @@ export default {
   }
   .category-list ul li a.active{
     color: #26a2ff;
+  }
+  .photo-list{
+    padding-bottom: 100px;
   }
   .photo-list ul li{
     width: 100%;

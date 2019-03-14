@@ -12,7 +12,7 @@
           <textarea cols="50" rows="10"></textarea>
         </li>
         <li>
-          发表评论按钮
+          <mt-button type="primary" size="large">发表评论</mt-button>
         </li>
         <li class="photo-comment">
           <div>
@@ -28,7 +28,7 @@
           <span class="time">{{comment.add_time | relativeTime}}</span>
         </li>
       </ul>
-      加载更多按钮
+      <mt-button type="danger" size="large" @click="loadMore(page)">加载更多</mt-button>
     </div>
   </div>
 </template>
@@ -40,23 +40,46 @@ export default {
   name: 'Comment',
   data () {
     return {
-      comments:[]
+      comments:[],
+      page:1
+    }
+  },
+  methods: {
+    loadMore(page){
+      this.$axios.get('getcomments/'+ this.cid + '?pageindex='+this.page)
+      .then(res=>{
+        // console.log(res.data.commentArr);
+        // this.comments = res.data.commentArr;
+        // console.log(this.comments);
+
+        if(res.data.commentArr.length === 0){
+          this.$toast('没有数据了');
+        }
+
+        if (page){
+          //表示加载更多
+         this.comments = this.comments.concat(res.data.commentArr)
+        }else{
+          //否则第一次加载
+          this.comments = res.data.commentArr;
+        }
+        this.page++;
+      })
+      .catch(err=>{r
+        console.log('评论加载失败');
+      })
     }
   },
   created() {
     // console.log(this.cid);
+
     let page = this.$route.query.id || "1";
     // console.log(this.$route.query.id);
     // console.log('comments/'+ this.cid + '?pageindex='+page);
-    this.$axios.get('getcomments/'+ this.cid + '?pageindex='+page)
-    .then(res=>{
-      // console.log(res.data.commentArr);
-      this.comments = res.data.commentArr;
-      // console.log(this.comments);
-    })
-    .catch(err=>{r
-      console.log('评论加载失败');
-    })
+
+    this.loadMore();
+
+
   },
 }
 </script>

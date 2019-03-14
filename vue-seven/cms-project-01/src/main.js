@@ -11,8 +11,11 @@ Vue.filter('converTime' , function (data,formatStr) {
   return Moment(data).format(formatStr);
 });
 Vue.filter('relativeTime' , function (data) {
-  return Moment(data).locale('zh_CN').fromNow();
+  return Moment(data).fromNow();
 });
+
+//moment.js设置中文
+Moment.locale('zh-cn');
 
 Vue.config.productionTip = false
 

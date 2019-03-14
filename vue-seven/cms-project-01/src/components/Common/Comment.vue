@@ -27,7 +27,6 @@
           <span class="content">{{comment.content}}</span>
           <span class="time">{{comment.add_time | relativeTime}}</span>
         </li>
-
       </ul>
       加载更多按钮
     </div>
@@ -51,9 +50,9 @@ export default {
     // console.log('comments/'+ this.cid + '?pageindex='+page);
     this.$axios.get('getcomments/'+ this.cid + '?pageindex='+page)
     .then(res=>{
-      console.log(res.data.commentArr);
+      // console.log(res.data.commentArr);
       this.comments = res.data.commentArr;
-      console.log(this.comments);
+      // console.log(this.comments);
     })
     .catch(err=>{r
       console.log('评论加载失败');

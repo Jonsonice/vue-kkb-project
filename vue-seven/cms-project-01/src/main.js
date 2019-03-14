@@ -11,7 +11,7 @@ Vue.filter('converTime' , function (data,formatStr) {
   return Moment(data).format(formatStr);
 });
 Vue.filter('relativeTime' , function (data) {
-  return Moment(data).fromNow();
+  return Moment(data).locale('zh_CN').fromNow();
 });
 
 Vue.config.productionTip = false

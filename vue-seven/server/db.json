@@ -1312,5 +1312,117 @@
         }
       ]
     }
+  ],
+  "getgoods":[
+    {
+      "id":1,
+      "title":"保时捷 Mancan 2017款 改款 Macan Turbo 3.6T报价",
+      "add_time":"2017-02-15 16:40:15",
+      "zhaiyao":"车辆级别：SUV 车体结构：5门5座SUV/越野",
+      "click":1,
+      "img_url":"http://m2.auto.itc.cn/c_zoom,w_800/29405757.JPG",
+      "sell_price":"92.80万",
+      "market_price":"103.55万元",
+      "stock_quantity":22
+    },
+    {
+      "id":2,
+      "title":"迈巴赫S级 2019款 S 450 4MATIC",
+      "add_time":"2015-02-15 16:40:15",
+      "zhaiyao":"排 量3.0T 4.0T 6.0T",
+      "click":2,
+      "img_url":"http://m1.auto.itc.cn/focus/model/4608/1.jpg",
+      "sell_price":"140.88万",
+      "market_price":"156.65万元",
+      "stock_quantity":17
+    },
+    {
+      "id":3,
+      "title":"2015款劳斯莱斯古思特Series Ⅱ加长版",
+      "add_time":"2015-02-14 16:40:15",
+      "zhaiyao":"车身尺寸：4794x1916x1387整备质量：1769公斤",
+      "click":3,
+      "img_url":"http://m1.auto.itc.cn/c_fill,w_600,h_400/5241333.jpg#",
+      "sell_price":"480.00万",
+      "market_price":"532.59万元",
+      "stock_quantity":5
+    },
+    {
+      "id":4,
+      "title":"福特Mustang 2019款 5.0L V8 GT报价",
+      "add_time":"2019-01-15 16:40:15",
+      "zhaiyao":"车辆级别：跑车车体结构：2门4座运动轿车/跑车",
+      "click":4,
+      "img_url":"http://m2.auto.itc.cn/c_fill,w_600,h_400/29066554.JPG#",
+      "sell_price":"59.18万",
+      "market_price":"66.5万元",
+      "stock_quantity":45
+    },
+    {
+      "id":5,
+      "title":"2019款 Aventador SVJ Roadster",
+      "add_time":"2018-03-15 16:40:15",
+      "zhaiyao":"车体结构：2门2座运动轿车/跑车",
+      "click":5,
+      "img_url":"http://m1.auto.itc.cn/focus/model/3071/3.jpg#",
+      "sell_price":"755.9万",
+      "market_price":"838.2万元",
+      "stock_quantity":3
+    },
+    {
+      "id":6,
+      "title":"017款 改款 Macan Turbo 3.6T报价",
+      "add_time":"2017-02-15 16:40:15",
+      "zhaiyao":"车辆级别：SUV 车体结构：5门5座SUV/越野",
+      "click":1,
+      "img_url":"http://m2.auto.itc.cn/c_zoom,w_800/29405757.JPG",
+      "sell_price":"92.80万",
+      "market_price":"103.55万元",
+      "stock_quantity":22
+    },
+    {
+      "id":7,
+      "title":"迈巴赫S级 2019款 S 450 4MATIC",
+      "add_time":"2015-02-15 16:40:15",
+      "zhaiyao":"排 量3.0T 4.0T 6.0T",
+      "click":2,
+      "img_url":"http://m1.auto.itc.cn/focus/model/4608/1.jpg",
+      "sell_price":"140.88万",
+      "market_price":"156.65万元",
+      "stock_quantity":17
+    },
+    {
+      "id":8,
+      "title":"2015款劳斯莱斯古思特Series Ⅱ加长版",
+      "add_time":"2015-02-14 16:40:15",
+      "zhaiyao":"车身尺寸：4794x1916x1387整备质量：1769公斤",
+      "click":3,
+      "img_url":"http://m1.auto.itc.cn/c_fill,w_600,h_400/5241333.jpg#",
+      "sell_price":"480.00万",
+      "market_price":"532.59万元",
+      "stock_quantity":5
+    },
+    {
+      "id":9,
+      "title":"福特Mustang 2019款 5.0L V8 GT报价",
+      "add_time":"2019-01-15 16:40:15",
+      "zhaiyao":"车辆级别：跑车车体结构：2门4座运动轿车/跑车",
+      "click":4,
+      "img_url":"http://m2.auto.itc.cn/c_fill,w_600,h_400/29066554.JPG#",
+      "sell_price":"59.18万",
+      "market_price":"66.5万元",
+      "stock_quantity":45
+    },
+    {
+      "id":10,
+      "title":"2019款 Aventador SVJ Roadster",
+      "add_time":"2018-03-15 16:40:15",
+      "zhaiyao":"车体结构：2门2座运动轿车/跑车",
+      "click":5,
+      "img_url":"http://m1.auto.itc.cn/focus/model/3071/3.jpg#",
+      "sell_price":"755.9万",
+      "market_price":"838.2万元",
+      "stock_quantity":3
+    }
   ]
 }

@@ -31,7 +31,7 @@ import src6 from '../../assets/images/home/ss.png'
 var grids = [
   {id:1,src:src1,title:'新闻资讯',router:{name:'news.list'}},
   {id:2,src:src2,title:'图文分享',router:{name:'photo.list',params:{categoryId:0}}},
-  {id:3,src:src3,title:'商品展示',router:{name:'news.list'}},
+  {id:3,src:src3,title:'商品展示',router:{name:'good.list',params:{page:1}}},
   {id:4,src:src4,title:'资讯',router:{name:'news.list'}},
   {id:5,src:src5,title:'留言反馈',router:{name:'news.list'}},
   {id:6,src:src6,title:'联系我们',router:{name:'news.list'}},

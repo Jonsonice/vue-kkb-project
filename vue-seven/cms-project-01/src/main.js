@@ -17,6 +17,18 @@ Vue.filter('relativeTime' , function (data) {
 //moment.js设置中文
 Moment.locale('zh-cn');
 
+//控制字数显示的过滤器
+Vue.filter('controllShow',function(str,num){
+  //如果当前字符串长度小于num，返回原值
+  if (str.length <= num) {
+    return str;
+  }
+   //如果当前字符串长度大于num，则截取num-1
+  if (str.length > num) {
+    return str.substr(0,num-1)+"....."
+  }
+})
+
 Vue.config.productionTip = false
 
 //使用mint-ui引入全部的组件

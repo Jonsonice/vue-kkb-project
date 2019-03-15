@@ -6,7 +6,7 @@
         <mt-loadmore :bottom-method="loadBottom" @bottom-status-change="handleBottomChange" :bottom-all-loaded="allLoaded" ref="loadmore" :auto-fill="autoFill">
           <ul class="page-loadmore-list">
             <li v-for="(goods,index) in goodsList" :key="index">
-              <a href="javascript:void(0)">
+              <router-link :to="{name:'good.detail',params:{id:goods.id}}">
                 <div class="imgs">
                   <img :src="goods.img_url" alt="">
                 </div>
@@ -25,7 +25,7 @@
                     </div>
                   </div>
                 </div>
-              </a>
+              </router-link>
             </li>
           </ul>
         </mt-loadmore>

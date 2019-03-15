@@ -9,6 +9,7 @@ import NewsDetail from '@/components/News/NewsDetail'
 import PhotoList from '@/components/Photo/PhotoList'
 import PhotoDetail from '@/components/Photo/PhotoDetail'
 import GoodsList from '@/components/Goods/GoodsList'
+import GoodsDetail from '@/components/Goods/GoodsDetail'
 
 
 
@@ -69,6 +70,11 @@ export default new Router({
       path: '/goods/list/:page',
       name: 'good.list',
       component:GoodsList
+    },
+    {
+      path: '/goods/detail/:id',
+      name: 'good.detail',
+      component:GoodsDetail
     }
   ]
 })

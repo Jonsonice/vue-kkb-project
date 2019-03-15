@@ -9,15 +9,15 @@
           </div>
         </li>
         <li class="txt-comment">
-          <textarea cols="50" rows="10"></textarea>
+          <textarea cols="50" rows="10" v-model="commentContent"></textarea>
         </li>
         <li>
-          <mt-button type="primary" size="large">发表评论</mt-button>
+          <mt-button type="primary" size="large" @click="commentHandler()">发表评论</mt-button>
         </li>
         <li class="photo-comment">
           <div>
             <span>评论列表</span>
-            <span>44条评论</span>
+            <span>{{comments.length}}条评论</span>
           </div>
         </li>
       </ul>
@@ -41,10 +41,28 @@ export default {
   data () {
     return {
       comments:[],
-      page:1
+      page:1,
+      commentContent:''
     }
   },
   methods: {
+    //评论按钮事件操作
+    commentHandler(){
+      //post请求
+      this.$axios.post('postcomment/' + this.cid,'content=' + this.commentContent)
+      .then(res=>{
+        console.log(res.data.commentArr);
+        this.commentContent='';
+        this.page=1;
+        this.loadMore();
+      })
+      .catch(err=>{
+        console.log("评论失败",err);
+      })
+    },
+
+
+    //加载更多按钮操作
     loadMore(page){
       this.$axios.get('getcomments/'+ this.cid + '?pageindex='+this.page)
       .then(res=>{
@@ -66,7 +84,7 @@ export default {
         this.page++;
       })
       .catch(err=>{r
-        console.log('评论加载失败');
+        console.log('评论加载失败',err);
       })
     }
   },

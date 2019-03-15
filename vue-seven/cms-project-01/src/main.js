@@ -58,6 +58,34 @@ Vue.component(Navbar.name,Navbar)
 import Comment from '@/components/Common/Comment'
 Vue.component(Comment.name,Comment)
 /* eslint-disable no-new */
+
+// 添加请求拦截器
+Axios.interceptors.request.use(function (config) {
+  // 在发送请求之前做些什么
+  //加载提示框
+  Mint.Indicator.open({
+    text:'玩命加载中...'
+  });
+  return config;
+}, function (error) {
+  // 对请求错误做些什么
+  return Promise.reject(error);
+});
+
+// 添加响应拦截器
+Axios.interceptors.response.use(function (response) {
+  //关闭加载提示框
+  Mint.Indicator.close();
+  // 对响应数据做点什么
+  return response;
+}, function (error) {
+  // 对响应错误做点什么
+  return Promise.reject(error);
+});
+
+
+
+
 new Vue({
   el: '#app',
   router,

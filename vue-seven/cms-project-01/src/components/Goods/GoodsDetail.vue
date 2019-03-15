@@ -62,6 +62,9 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+  .goodsdetail{
+    padding-bottom: 100px;
+  }
   .ball-enter-active{
     opacity: 0;
   }
@@ -110,20 +113,28 @@ export default {
     color: rgba(0,0,0,0.5);
     margin-top: 8px;
   }
-
+  .product-desc ul{
+    padding: 0 10px;
+  }
+  .product-desc ul li .mint-button{
+    margin-bottom: 5px;
+  }
 
   .product-desc ul>:nth-child(1) span{
-    color: blue;
+    color: #26a2ff;
     font-size: 18px;
     font-weight: bold;
   }
   .product-desc ul>:nth-child(1){
     border-bottom: 1px solid rgba(0,0,0,0.5);
   }
-  .product-desc ul,
-  .product-info ul,
-  .product-props ul{
-    padding-left: 10px;
+
+  .product-props{
+    padding: 10px;
+  }
+  .product-props li {
+    margin: 5px 0;
+    font-size: 14px;
   }
   .price-li span{
     color: red;
@@ -132,11 +143,19 @@ export default {
   .price-li s{
     margin-right: 16px;
   }
+  .product-info{
+    padding: 0 10px;
+  }
 
+  .product-info ul li .mint-button{
+    margin: 10px 0;
+  }
   .number-li span{
     display: inline-block;
     border: 2px solid rgba(0,0,0,0.1);
     width: 25px;
+    margin-right: 10px;
+    text-align: center;
   }
   .number-li>:nth-child(2){
     width: 40px;

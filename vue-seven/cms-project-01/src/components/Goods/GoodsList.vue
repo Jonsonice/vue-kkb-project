@@ -70,12 +70,12 @@ export default {
       this.$refs.loadmore.onBottomLoaded();
     },
     handleBottomChange(status){
-      console.log(status);
+      // console.log(status);
     },
     loadGoodsByPage(){
         this.$axios.get('getgoods/'+'?pageindex='+this.page)
         .then(res=>{
-          console.log(res.data.length);
+          // console.log(res.data.length);
           if(res.data.length<10){
 
             this.$toast("没有数据了");

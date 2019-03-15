@@ -57,6 +57,12 @@ Vue.component(Navbar.name,Navbar)
 //注册全局评论组件
 import Comment from '@/components/Common/Comment'
 Vue.component(Comment.name,Comment)
+
+//注册全局轮播图组件
+import MySwiper from '@/components/Common/MySwiper'
+Vue.component(MySwiper.name,MySwiper)
+
+
 /* eslint-disable no-new */
 
 // 添加请求拦截器

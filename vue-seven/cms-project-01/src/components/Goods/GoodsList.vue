@@ -3,30 +3,32 @@
     <Navbar title="商品列表"/>
     <div class="page-loadmore">
       <div class="page-loadmore-wrapper">
-        <ul class="page-loadmore-list">
-          <li v-for="(goods,index) in goodsList" :key="goods.id">
-            <a href="javascript:void(0)">
-              <div class="imgs">
-                <img :src="goods.img_url" alt="">
-              </div>
-              <div class="title">{{goods.title | controllShow(30)}}</div>
-              <div class="desc">
-                <div class="sell">
-                  <span>{{goods.sell_price}}</span>
-                  <s>{{goods.market_price}}</s>
+        <mt-loadmore :bottom-method="loadBottom" @bottom-status-change="handleBottomChange" :bottom-all-loaded="allLoaded" ref="loadmore">
+          <ul class="page-loadmore-list">
+            <li v-for="(goods,index) in goodsList" :key="index">
+              <a href="javascript:void(0)">
+                <div class="imgs">
+                  <img :src="goods.img_url" alt="">
                 </div>
-                <div class="detail">
-                  <div class="hot">
-                    热卖中
+                <div class="title">{{goods.title | controllShow(30)}}</div>
+                <div class="desc">
+                  <div class="sell">
+                    <span>现价：{{goods.sell_price}}</span>
+                    <s>原价：{{goods.market_price}}</s>
                   </div>
-                  <div class="count">
-                    剩{{goods.stock_quantity}}辆
+                  <div class="detail">
+                    <div class="hot">
+                      热卖中...
+                    </div>
+                    <div class="count">
+                      仅剩{{goods.stock_quantity}}辆
+                    </div>
                   </div>
                 </div>
-              </div>
-            </a>
-          </li>
-        </ul>
+              </a>
+            </li>
+          </ul>
+        </mt-loadmore>
       </div>
     </div>
   </div>
@@ -37,19 +39,48 @@ export default {
   name: 'GoodsList',
   data () {
     return {
-      page:this.$route.params.page,
-      goodsList:[]
+      page:1,
+      goodsList:[],
+      allLoaded:false
     }
   },
+  methods: {
+    loadBottom(){
+      console.log('上拉了');
+      //通知状态发送改变
+
+      this.loadGoodsByPage();
+      this.$refs.loadmore.onBottomLoaded();
+    },
+    handleBottomChange(status){
+      console.log(status);
+    },
+    loadGoodsByPage(){
+        this.$axios.get('getgoods/'+'?pageindex='+this.page)
+        .then(res=>{
+          console.log(res.data.length);
+          if(res.data.length<5){
+            this.$toast("没有数据了");
+
+            this.allLoaded=true;
+          }
+
+          if(this.page == 1){
+            this.goodsList = res.data;
+          // console.log(this.goodsList);
+          }else{
+            this.goodsList = this.goodsList.concat(res.data);
+          }
+          this.page++;
+        })
+        .catch(err=>{
+          console.log("商品列表获取失败",err);
+        })
+      }
+  },
   created() {
-    this.$axios.get('getgoods/'+'?pageindex='+this.page)
-    .then(res=>{
-      this.goodsList = res.data;
-      // console.log(this.goodsList);
-    })
-    .catch(err=>{
-      console.log("商品列表获取失败",err);
-    })
+    // 加载第一页的列表数据
+    this.loadGoodsByPage();
   },
 }
 </script>

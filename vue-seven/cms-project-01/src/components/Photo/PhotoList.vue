@@ -11,7 +11,7 @@
     <!-- 图片展示区 -->
     <div class="photo-list">
       <ul>
-        <li v-for="(item,index) in photolist" :key="item.id">
+        <li v-for="(item,index) in photolist" :key="index">
           <router-link :to="{name:'photo.detail',query:{id:item.id}}">
             <!-- <img :src="item.img_url" alt="">-->
             <img v-lazy="item.img_url">

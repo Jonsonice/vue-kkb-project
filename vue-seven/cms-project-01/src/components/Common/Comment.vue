@@ -22,7 +22,7 @@
         </li>
       </ul>
       <ul class="comment-list">
-        <li v-for="(comment,index) in comments">
+        <li v-for="(comment,index) in comments" :key="index">
           <span class="name">{{comment.user_name}}:</span>
           <span class="content">{{comment.content}}</span>
           <span class="time">{{comment.add_time | relativeTime}}</span>

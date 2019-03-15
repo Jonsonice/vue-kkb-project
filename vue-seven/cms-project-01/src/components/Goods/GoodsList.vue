@@ -2,8 +2,8 @@
   <div class="goodslist">
     <Navbar title="商品列表"/>
     <div class="page-loadmore">
-      <div class="page-loadmore-wrapper">
-        <mt-loadmore :bottom-method="loadBottom" @bottom-status-change="handleBottomChange" :bottom-all-loaded="allLoaded" ref="loadmore">
+      <div class="page-loadmore-wrapper" ref="wrapper" :style="{ height:wrapperHeight+'px' }">
+        <mt-loadmore :bottom-method="loadBottom" @bottom-status-change="handleBottomChange" :bottom-all-loaded="allLoaded" ref="loadmore" :auto-fill="autoFill">
           <ul class="page-loadmore-list">
             <li v-for="(goods,index) in goodsList" :key="index">
               <a href="javascript:void(0)">
@@ -35,13 +35,30 @@
 </template>
 
 <script>
+/*
+mt-loadmore中的属性
+1.bottomLoad函数
+2.机制 bottomLoad :bottom-all-loaded 默认为false 可以上拉 true 禁止上拉
+3.auto-fill默认为true 自动检测父容器，并调用bottomload直到撑满父容器
+4.pull拉动未满足70px drop达到70px loading加载中
+5.loadmore组件对象的onBottomLoaded()通知结束loading 进入pull状态
+6.再组件上写ref在js中通过this.$refs.xxx获取的组件对象
+  通过在普通标签写ref在js中通过this$refs.xxx获取的dom对象
+7.上拉加载更多公式
+  进入监测机制==>可视的高度+页面卷起的高度=设备的高度
+*/
+
+
+
 export default {
   name: 'GoodsList',
   data () {
     return {
       page:1,
       goodsList:[],
-      allLoaded:false
+      allLoaded:false,
+      wrapperHeight: 0,
+      autoFill:false
     }
   },
   methods: {
@@ -59,7 +76,8 @@ export default {
         this.$axios.get('getgoods/'+'?pageindex='+this.page)
         .then(res=>{
           console.log(res.data.length);
-          if(res.data.length<5){
+          if(res.data.length<10){
+
             this.$toast("没有数据了");
 
             this.allLoaded=true;
@@ -82,6 +100,9 @@ export default {
     // 加载第一页的列表数据
     this.loadGoodsByPage();
   },
+  mounted() {
+      this.wrapperHeight = document.documentElement.clientHeight - this.$refs.wrapper.getBoundingClientRect().top;
+  }
 }
 </script>
 

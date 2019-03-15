@@ -36,7 +36,7 @@
     <div class="product-info">
       <ul>
         <li>
-          <mt-button type="primary" size="large" plain>图文介绍</mt-button>
+          <mt-button type="primary" size="large" plain @click.native = "showShopInfo">图文介绍</mt-button>
         </li>
         <li>
           <mt-button type="danger" size="large" plain>商品评论</mt-button>
@@ -52,6 +52,17 @@ export default {
   data () {
     return {
       url:'photolunbo/'+this.$route.params.id
+    }
+  },
+  methods: {
+    showShopInfo(){
+      //通过动态路由进行跳转
+      this.$router.push({
+        name:"photo.info",
+        query:{
+          id:this.$route.params.id
+        }
+      })
     }
   },
   created () {

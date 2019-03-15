@@ -1,6 +1,6 @@
 <template>
 	<div class="detail">
-		<Navbar title="新闻详情"/>
+		<Navbar :title="title"/>
 		<div class="item">
 			<p>{{detail.title}}</p>
 			<div class="others">
@@ -21,6 +21,7 @@
 				detail:{},
 			}
     },
+    props:['title'],
     created () {
       let id = this.$route.query.id;
 

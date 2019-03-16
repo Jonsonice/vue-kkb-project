@@ -1646,5 +1646,188 @@
       "market_price":"838.2万元",
       "stock_quantity":3
     }
+  ],
+  "getinfo":[
+    {
+      "id":1,
+      "title":"017款 改款 Macan Turbo 3.6T报价",
+      "add_time":"2012-06-15 16:40:15",
+      "goods_no":"ASD21412412",
+      "stock_quantity":20,
+      "market_price":"103.55万元",
+      "sell_price":"92.80万"
+    },
+    {
+      "id":2,
+      "title":"127.6991万 新Panamera 4 E-Hybrid上市",
+      "add_time":"2017-02-15 16:40:15",
+      "goods_no":"KK21412412",
+      "stock_quantity":10,
+      "market_price":"156.65万元",
+      "sell_price":"59.18万"
+    },
+    {
+      "id":3,
+      "title":"2015款劳斯莱斯古思特Series Ⅱ加长版",
+      "add_time":"2018-03-15 16:40:15",
+      "goods_no":"LLO21412412",
+      "stock_quantity":18,
+      "market_price":"532.59万元",
+      "sell_price":"480.00万"
+    },
+    {
+      "id":4,
+      "title":"214万起步 新款梅赛德斯-迈巴赫S级上市",
+      "add_time":"2018-11-29 02:28:55",
+      "goods_no":"PJHD21412412",
+      "stock_quantity":13,
+      "market_price":"156.65万元",
+      "sell_price":"140.88万"
+    },
+    {
+      "id":5,
+      "title":"Waymo或首次寻求外部投资 估价至少为Cruise数倍",
+      "add_time":"2019-03-11 15:46:53",
+      "goods_no":"AIU7D21412412",
+      "stock_quantity":9,
+      "market_price":"838.2万元",
+      "sell_price":"755.9万"
+    },
+    {
+      "id":6,
+      "title":"017款 改款 Macan Turbo 3.6T报价",
+      "add_time":"2012-06-15 16:40:15",
+      "goods_no":"ASD21412412",
+      "stock_quantity":20,
+      "market_price":"103.55万元",
+      "sell_price":"92.80万"
+    },
+    {
+      "id":7,
+      "title":"127.6991万 新Panamera 4 E-Hybrid上市",
+      "add_time":"2017-02-15 16:40:15",
+      "goods_no":"KK21412412",
+      "stock_quantity":10,
+      "market_price":"156.65万元",
+      "sell_price":"59.18万"
+    },
+    {
+      "id":8,
+      "title":"2015款劳斯莱斯古思特Series Ⅱ加长版",
+      "add_time":"2018-03-15 16:40:15",
+      "goods_no":"LLO21412412",
+      "stock_quantity":18,
+      "market_price":"532.59万元",
+      "sell_price":"480.00万"
+    },
+    {
+      "id":9,
+      "title":"214万起步 新款梅赛德斯-迈巴赫S级上市",
+      "add_time":"2018-11-29 02:28:55",
+      "goods_no":"PJHD21412412",
+      "stock_quantity":13,
+      "market_price":"156.65万元",
+      "sell_price":"140.88万"
+    },
+    {
+      "id":10,
+      "title":"Waymo或首次寻求外部投资 估价至少为Cruise数倍",
+      "add_time":"2019-03-11 15:46:53",
+      "goods_no":"AIU7D21412412",
+      "stock_quantity":9,
+      "market_price":"838.2万元",
+      "sell_price":"755.9万"
+    },
+    {
+      "id":11,
+      "title":"017款 改款 Macan Turbo 3.6T报价",
+      "add_time":"2012-06-15 16:40:15",
+      "goods_no":"ASD21412412",
+      "stock_quantity":20,
+      "market_price":"103.55万元",
+      "sell_price":"92.80万"
+    },
+    {
+      "id":12,
+      "title":"127.6991万 新Panamera 4 E-Hybrid上市",
+      "add_time":"2017-02-15 16:40:15",
+      "goods_no":"KK21412412",
+      "stock_quantity":10,
+      "market_price":"156.65万元",
+      "sell_price":"59.18万"
+    },
+    {
+      "id":13,
+      "title":"2015款劳斯莱斯古思特Series Ⅱ加长版",
+      "add_time":"2018-03-15 16:40:15",
+      "goods_no":"LLO21412412",
+      "stock_quantity":18,
+      "market_price":"532.59万元",
+      "sell_price":"480.00万"
+    },
+    {
+      "id":14,
+      "title":"214万起步 新款梅赛德斯-迈巴赫S级上市",
+      "add_time":"2018-11-29 02:28:55",
+      "goods_no":"PJHD21412412",
+      "stock_quantity":13,
+      "market_price":"156.65万元",
+      "sell_price":"140.88万"
+    },
+    {
+      "id":15,
+      "title":"Waymo或首次寻求外部投资 估价至少为Cruise数倍",
+      "add_time":"2019-03-11 15:46:53",
+      "goods_no":"AIU7D21412412",
+      "stock_quantity":9,
+      "market_price":"838.2万元",
+      "sell_price":"755.9万"
+    },
+    {
+      "id":16,
+      "title":"017款 改款 Macan Turbo 3.6T报价",
+      "add_time":"2012-06-15 16:40:15",
+      "goods_no":"ASD21412412",
+      "stock_quantity":20,
+      "market_price":"103.55万元",
+      "sell_price":"92.80万"
+    },
+    {
+      "id":17,
+      "title":"127.6991万 新Panamera 4 E-Hybrid上市",
+      "add_time":"2017-02-15 16:40:15",
+      "goods_no":"KK21412412",
+      "stock_quantity":10,
+      "market_price":"156.65万元",
+      "sell_price":"59.18万"
+    },
+    {
+      "id":18,
+      "title":"2015款劳斯莱斯古思特Series Ⅱ加长版",
+      "add_time":"2018-03-15 16:40:15",
+      "goods_no":"LLO21412412",
+      "stock_quantity":18,
+      "market_price":"532.59万元",
+      "sell_price":"480.00万"
+    },
+    {
+      "id":19,
+      "title":"214万起步 新款梅赛德斯-迈巴赫S级上市",
+      "add_time":"2018-11-29 02:28:55",
+      "goods_no":"PJHD21412412",
+      "stock_quantity":13,
+      "market_price":"156.65万元",
+      "sell_price":"140.88万"
+    },
+    {
+      "id":20,
+      "title":"Waymo或首次寻求外部投资 估价至少为Cruise数倍",
+      "add_time":"2019-03-11 15:46:53",
+      "goods_no":"AIU7D21412412",
+      "stock_quantity":9,
+      "market_price":"838.2万元",
+      "sell_price":"755.9万"
+    }
+
   ]
 }

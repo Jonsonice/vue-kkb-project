@@ -10,6 +10,7 @@ import PhotoList from '@/components/Photo/PhotoList'
 import PhotoDetail from '@/components/Photo/PhotoDetail'
 import GoodsList from '@/components/Goods/GoodsList'
 import GoodsDetail from '@/components/Goods/GoodsDetail'
+import GoodsComment from '@/components/Goods/GoodsComment'
 
 
 Vue.use(Router)
@@ -87,6 +88,12 @@ export default new Router({
       props:{
         title:"图文介绍"
       }
+    },
+    //图文评论
+    {
+      path: '/goods/comment',
+      name: 'good.comment',
+      component:GoodsComment
     }
   ]
 })

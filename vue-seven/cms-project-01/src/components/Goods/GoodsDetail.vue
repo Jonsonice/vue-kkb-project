@@ -12,11 +12,11 @@
           <span class="product-desc-span">商品标题</span>
         </li>
         <li class="price-li">
-          市场价：<s>￥999</s>
-          销售价：<span style="font-size:18px">￥5</span>
+          市场价：<s>￥{{goodsinfo.market_price}}</s>
+          销售价：<span style="font-size:18px">￥{{goodsinfo.sell_price}}</span>
         </li>
         <li class="number-li">
-          购买数量：<span>-</span><span>1</span><span>+</span>
+          购买数量：<span @click="substract">-</span><span>{{pickNum}}</span><span @click="add">+</span>
         </li>
         <li>
           <mt-button type="primary" size="small">立刻购买</mt-button>
@@ -28,9 +28,9 @@
     <div class="product-props">
       <ul>
         <li>商品参数</li>
-        <li>商品货号：123213</li>
-        <li>库存情况：999件</li>
-        <li>上架时间：2018-08-08</li>
+        <li>商品货号：{{goodsinfo.goods_no}}</li>
+        <li>库存情况：{{goodsinfo.stock_quantity}}辆</li>
+        <li>上架时间：{{goodsinfo.add_time | converTime( 'YYYY-MM-DD' )}}</li>
       </ul>
     </div>
     <div class="product-info">
@@ -39,7 +39,7 @@
           <mt-button type="primary" size="large" plain @click.native = "showShopInfo">图文介绍</mt-button>
         </li>
         <li>
-          <mt-button type="danger" size="large" plain>商品评论</mt-button>
+          <mt-button type="danger" size="large" plain @click.native = "showComment">商品评论</mt-button>
         </li>
       </ul>
     </div>
@@ -51,7 +51,9 @@ export default {
   name: 'GoodsDetail',
   data () {
     return {
-      url:'photolunbo/'+this.$route.params.id
+      url:'photolunbo/'+this.$route.params.id,
+      goodsinfo:{},
+      pickNum:1
     }
   },
   methods: {
@@ -63,10 +65,36 @@ export default {
           id:this.$route.params.id
         }
       })
+    },
+    showComment(){
+      this.$router.push({
+        name:"good.comment",
+        query:{
+          id:this.$route.params.id
+        }
+      })
+    },
+    //数量加减
+    substract(){
+      if(this.pickNum===1){
+        return;
+      }
+      this.pickNum--;
+    },
+    add(){
+      if(this.pickNum < this.goodsinfo.stock_quantity){
+        this.pickNum++;
+      }
     }
   },
   created () {
-
+    this.$axios.get('getinfo/'+ this.$route.params.id)
+    .then(res=>{
+      this.goodsinfo = res.data;
+    })
+    .catch(err=>{
+      console.log("商品详情异常",err);
+    })
   }
 }
 </script>

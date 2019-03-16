@@ -17,6 +17,7 @@
                         exact @click.native="changeHash(index)"
                         :class="{'link-active':index == currentIndex}">
             <img :src="tab.imgSrc" alt="">
+            <mt-badge size="small" type="error" v-if="index===2">1</mt-badge>
             <p>{{tab.title}}</p>
           </router-link>
         </li>
@@ -121,6 +122,7 @@ export default {
     width: 100%;
     height: 100%;
     padding-top: 5px;
+    position: relative;
   }
   .tabBar ul li a.link-active{
     background-color:#ccc;
@@ -132,5 +134,10 @@ export default {
   .tabBar ul li a img{
     width: 25px;
     height: 25px;
+  }
+  .mint-badge{
+    position: absolute;
+    top: 0;
+    right: 20px;
   }
 </style>

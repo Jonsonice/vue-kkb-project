@@ -20,11 +20,14 @@
         </li>
         <li>
           <mt-button type="primary" size="small">立刻购买</mt-button>
-          <mt-button type="danger" size="small">加入购物车</mt-button>
+          <mt-button type="danger" size="small" @click="ballHandler">加入购物车</mt-button>
         </li>
       </ul>
     </div>
-    <div class="ball"></div>
+    <transition name="ball" @after-enter="afterEnter">
+      <div class="ball" v-if="isExist"></div>
+    </transition>
+
     <div class="product-props">
       <ul>
         <li>商品参数</li>
@@ -53,10 +56,18 @@ export default {
     return {
       url:'photolunbo/'+this.$route.params.id,
       goodsinfo:{},
-      pickNum:1
+      pickNum:1,
+      isExist:false
     }
   },
   methods: {
+    //小球事件
+    ballHandler(){
+      this.isExist = true;
+    },
+    afterEnter(){
+      this.isExist = false;
+    },
     showShopInfo(){
       //通过动态路由进行跳转
       this.$router.push({
@@ -105,6 +116,9 @@ export default {
     padding-bottom: 100px;
   }
   .ball-enter-active{
+    animation: bounce-in 1s;
+  }
+  .ball-leave{
     opacity: 0;
   }
   @keyframes bounce-in {
@@ -112,13 +126,13 @@ export default {
       transform: translate3d(0,0,0);
     }
     50%{
-      transform: translate3d(140px,-50px,0);
+      transform: translate3d(100px,-50px,0);
     }
     75%{
-      transform: translate3d(160px,0,0);
+      transform: translate3d(100px,0,0);
     }
     100%{
-      transform: translate3d(140px,300px,0);
+      transform: translate3d(100px,300px,0);
     }
   }
 
@@ -205,7 +219,7 @@ export default {
     width: 24px;
     height: 24px;
     position: absolute;
-    top: 440px;
+    top: 538px;
     left: 120px;
     display: inline-block;
     z-index: 9999;

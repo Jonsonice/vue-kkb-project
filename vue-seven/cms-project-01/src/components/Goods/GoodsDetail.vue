@@ -50,6 +50,9 @@
 </template>
 
 <script>
+import GoodsTool from '@/GoodsTool'
+// const GoodsTool =() => import('@/GoodsTool')
+
 export default {
   name: 'GoodsDetail',
   data () {
@@ -61,12 +64,19 @@ export default {
     }
   },
   methods: {
+    afterEnter(){
+      this.isExist = false;
+       //触发事件
+      this.$bus.$emit('sendPickNum',this.pickNum);
+      //将添加到购物车的数据保存到本地
+      GoodsTool.add({
+        id:this.goodsinfo.id,
+        num:this.pickNum
+      })
+    },
     //小球事件
     ballHandler(){
       this.isExist = true;
-    },
-    afterEnter(){
-      this.isExist = false;
     },
     showShopInfo(){
       //通过动态路由进行跳转

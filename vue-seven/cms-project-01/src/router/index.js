@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
 import Home from '@/components/Home/home'
 import Vip from '@/components/Vip/vip'
 import Search from '@/components/Search/search'
-import Cart from '@/components/Cart/cart'
+import Cart from '@/components/Cart/Cart'
 import NewsList from '@/components/News/NewsList'
 import NewsDetail from '@/components/News/NewsDetail'
 import PhotoList from '@/components/Photo/PhotoList'

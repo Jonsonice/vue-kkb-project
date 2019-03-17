@@ -89,7 +89,9 @@ Axios.interceptors.response.use(function (response) {
   return Promise.reject(error);
 });
 
-
+//挂载公交车js
+import EventBus from './EventBus.js'
+Vue.prototype.$bus = EventBus;
 
 
 new Vue({

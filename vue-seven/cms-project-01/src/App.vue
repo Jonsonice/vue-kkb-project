@@ -17,7 +17,7 @@
                         exact @click.native="changeHash(index)"
                         :class="{'link-active':index == currentIndex}">
             <img :src="tab.imgSrc" alt="">
-            <mt-badge size="small" type="error" v-if="index===2">1</mt-badge>
+            <mt-badge size="small" type="error" v-if="index===2">{{pickNum}}</mt-badge>
             <p>{{tab.title}}</p>
           </router-link>
         </li>
@@ -52,6 +52,7 @@ import vip from './assets/images/hy.png'
 import cart from './assets/images/gwc.png'
 import search from './assets/images/cz.png'
 
+
 let tabs=[
   {id:1,title:'首页',imgSrc:home,routerName:{name:'home'}},
   {id:2,title:'会员',imgSrc:vip,routerName:{name:'vip'}},
@@ -59,13 +60,16 @@ let tabs=[
   {id:4,title:'查找',imgSrc:search,routerName:{name:'search'}},
 ];
 
+import GoodsTool from '@/GoodsTool'
+
 export default {
   name: 'App',
   data() {
     return {
       selected:'',
       tabs:tabs,
-      currentIndex:0
+      currentIndex:0,
+      pickNum:0
     }
   },
   methods: {
@@ -83,6 +87,15 @@ export default {
   //     });
   //   }
   // }
+  created() {
+    //绑定事件
+    this.$bus.$on('sendPickNum',(data)=>{
+      this.pickNum+=data;
+    });
+    //获取购物总数
+    this.pickNum = GoodsTool.getTotalCount();
+    // console.log(pickNum);
+  },
 }
 </script>
 
@@ -138,6 +151,6 @@ export default {
   .mint-badge{
     position: absolute;
     top: 0;
-    right: 20px;
+    right: 10px;
   }
 </style>

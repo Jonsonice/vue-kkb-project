@@ -10,8 +10,8 @@ obj.saveGoods = function (goodsList) {
 
 //获取所有商品
 obj.getGoodsList = function(){
-  // return JSON.parse(window.localStorage.getItem('goodsList') || '{}')
-  return JSON.parse(window.localStorage.getItem('goodsList' ||"{}"))
+  return JSON.parse(window.localStorage.getItem('goodsList') || '{}')
+  // return JSON.parse(window.localStorage.getItem('goodsList' ||"{}"))
 }
 
 

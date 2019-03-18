@@ -8,7 +8,11 @@
       <mt-button icon="more" slot="right"></mt-button>
     </mt-header>
     <!-- 路由组件的出口 -->
-    <router-view/>
+
+    <transition name="fade" mode="out-in">
+      <router-view/>
+    </transition>
+
 
     <div class="tabBar">
       <ul>
@@ -152,5 +156,11 @@ export default {
     position: absolute;
     top: 0;
     right: 10px;
+  }
+  .fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+  }
+  .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
   }
 </style>

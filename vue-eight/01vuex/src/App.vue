@@ -1,12 +1,15 @@
 <template>
   <div id="app">
-    <h1>我是app组件的{{count}}</h1>
+    <h1>我是app组件的第一种用法：{{count}}和{{msg}}</h1>
+    <!-- <h2>我是app组件的第二种用法：{{countAlias}}</h2> -->
+    <!-- <h3>获取组件的值：{{countLocalState}}</h3> -->
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
+import { mapState } from 'vuex'
 
 export default {
   name: 'app',
@@ -15,14 +18,44 @@ export default {
   },
   data () {
     return {
-      
+      num:10
     }
   },
+  
+  // computed: mapState({
+  //   count:state=>state.count,
+  //   countAlias: 'count',
+  //   countLocalState(state){
+  //     return state.count + this.num
+  //   },
+  //   msg:'msg'
+  // })
+
+  // computed: {
+    // count(){
+    //   return this.$store.state.count
+    // }
+  // },
+
+  //对象展开运算符
+  // computed: {
+  //   ...mapState({
+  //     count:state=>state.count,
+  //     countAlias: 'count',
+  //     countLocalState(state){
+  //       return state.count + this.num
+  //     },
+  //     msg:'msg'
+  //   })
+  // }
+
   computed: {
-    count(){
-      return this.$store.state.count
-    }
-  },
+    //当前组件的计算属性的方法跟store中的state中key是一样的，简便方式
+    ...mapState([
+      "count",
+      "msg"
+    ])
+  }
 }
 </script>
 

@@ -29,6 +29,12 @@ export default new Vuex.Store({
   mutations:{
     addNum(state,num){
       state.count+=num;
+    },
+    //不要在这里操作异步数据
+    addCountByasync(state,num){
+      setTimeout(()=>{
+        state.count+=num;
+      },1000)
     }
   }
 })

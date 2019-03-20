@@ -4,6 +4,7 @@
     <!-- <h2>我是app组件的第二种用法：{{countAlias}}</h2> -->
     <!-- <h3>获取组件的值：{{countLocalState}}</h3> -->
     <button @click="addCount">计算</button>
+    <button @click="addCountByasync">异步计算</button>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -28,7 +29,11 @@ export default {
       //不能这样操作，修改状态的唯一方法是提交mutation
 
       this.$store.commit('addNum',1);
+    },
+    addCountByasync(){
+      this.$store.commit('addCountByasync',5)
     }
+    
   },
   // computed: mapState({
   //   count:state=>state.count,

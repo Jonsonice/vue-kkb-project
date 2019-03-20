@@ -3,8 +3,9 @@
     <h1>我是app组件的第一种用法：{{count}}和{{msg}}</h1>
     <!-- <h2>我是app组件的第二种用法：{{countAlias}}</h2> -->
     <!-- <h3>获取组件的值：{{countLocalState}}</h3> -->
-    <button @click="addCount">计算</button>
+    <button @click="addCount">同步计算</button>
     <button @click="addCountByasync">异步计算</button>
+    <button @click="addCountByasync2">异步actions计算</button>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -31,7 +32,16 @@ export default {
       this.$store.commit('addNum',1);
     },
     addCountByasync(){
-      this.$store.commit('addCountByasync',5)
+      //1.第一个参数是事件的名字，第二个参数是传递的数据表
+      // this.$store.commit('addCountByasync',{num:5});
+      //2.以对象的方式提交
+      this.$store.commit({
+        type:"addCountByasync",
+        num:5
+      })
+    },
+    addCountByasync2(){
+      this.$store.dispatch('addCountByasync2',{num:5})
     }
     
   },

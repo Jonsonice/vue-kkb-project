@@ -31,9 +31,20 @@ export default new Vuex.Store({
       state.count+=num;
     },
     //不要在这里操作异步数据
-    addCountByasync(state,num){
+    addCountByasync(state,payload){
+      console.log(payload);
+      // setTimeout(()=>{
+        state.count+=payload.num;
+      // },1000)
+    },
+    addCountByasync2(state,num){
+      state.count+=num;
+    }
+  },
+  actions: {
+    addCountByasync2({commit},payload){
       setTimeout(()=>{
-        state.count+=num;
+        commit('addCountByasync2',payload.num)
       },1000)
     }
   }

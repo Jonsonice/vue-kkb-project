@@ -14,12 +14,21 @@ export default new Vuex.Store({
       {id:1, msg:"我的生活1"},
       {id:2, msg:"我的生活2"},
       {id:3, msg:"我的生活3"},
-      {id:4, msg:"我的生活4"}
+      {id:4, msg:"我的生活4"},
+      {id:5, msg:"我的生活5"}
     ]
   },
   getters:{
     lists(state){
       return state.lists;
+    },
+    item:(state)=>(i)=>{
+      return state.lists[i]
+    }
+  },
+  mutations:{
+    addNum(state,num){
+      state.count+=num;
     }
   }
 })

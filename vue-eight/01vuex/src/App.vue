@@ -3,6 +3,7 @@
     <h1>我是app组件的第一种用法：{{count}}和{{msg}}</h1>
     <!-- <h2>我是app组件的第二种用法：{{countAlias}}</h2> -->
     <!-- <h3>获取组件的值：{{countLocalState}}</h3> -->
+    <button @click="addCount">计算</button>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -21,7 +22,14 @@ export default {
       num:10
     }
   },
-  
+  methods: {
+    addCount(){
+      // this.$store.state.count++;
+      //不能这样操作，修改状态的唯一方法是提交mutation
+
+      this.$store.commit('addNum',1);
+    }
+  },
   // computed: mapState({
   //   count:state=>state.count,
   //   countAlias: 'count',
